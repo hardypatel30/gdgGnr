@@ -71,7 +71,7 @@ class MoviesList : Fragment() {
     private fun initAdapter() {
         view!!.findViewById<RecyclerView>(R.id.movies_recycler).adapter = moviePagedListAdapter
         moviesViewModel.pagedListMovie.observe(this, Observer<PagedList<Movie>> {
-            Log.d(MoviesActivity::class::java.name, "Movies: ${it?.size}")
+
             moviePagedListAdapter.submitList(it)
         })
     }
